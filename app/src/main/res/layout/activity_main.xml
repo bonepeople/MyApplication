@@ -19,4 +19,10 @@
         android:text="测试长按时间时更新界面导致的卡顿现象"
         app:layout_constraintTop_toBottomOf="@id/button_appbar" />
 
+    <Button
+        android:id="@+id/button_wakeup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="匿名唤醒app"
+        app:layout_constraintTop_toBottomOf="@id/button_click" />
 </android.support.constraint.ConstraintLayout>
