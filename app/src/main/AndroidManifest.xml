@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".AppBarActivity" />
+        <activity android:name=".LongClickActivity" />
     </application>
 
 </manifest>

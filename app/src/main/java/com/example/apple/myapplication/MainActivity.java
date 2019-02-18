@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViewById(R.id.button_appbar).setOnClickListener(this);
+        findViewById(R.id.button_click).setOnClickListener(this);
     }
 
     @Override
@@ -19,6 +20,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.button_appbar:
                 startActivity(new Intent(this, AppBarActivity.class));
+                break;
+            case R.id.button_click:
+                startActivity(new Intent(this, LongClickActivity.class));
                 break;
         }
     }
