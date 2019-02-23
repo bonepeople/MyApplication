@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.button_appbar).setOnClickListener(this);
         findViewById(R.id.button_click).setOnClickListener(this);
         findViewById(R.id.button_wakeup).setOnClickListener(this);
+        findViewById(R.id.button_find).setOnClickListener(this);
     }
 
     @Override
@@ -27,6 +28,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button_wakeup:
                 startActivity(new Intent(this, WakeUpActivity.class));
+                break;
+            case R.id.button_find:
+                startActivity(new Intent(this, FindMainActivity.class));
                 break;
         }
     }

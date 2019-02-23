@@ -25,4 +25,11 @@
         android:layout_height="wrap_content"
         android:text="匿名唤醒app"
         app:layout_constraintTop_toBottomOf="@id/button_click" />
+
+    <Button
+        android:id="@+id/button_find"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="新版发现界面，用于测试开发中的小细节"
+        app:layout_constraintTop_toBottomOf="@id/button_wakeup" />
 </android.support.constraint.ConstraintLayout>
