@@ -23,7 +23,7 @@
         android:id="@+id/button_wakeup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="匿名唤醒app"
+        android:text="阿里云播放器测试"
         app:layout_constraintTop_toBottomOf="@id/button_click" />
 
     <Button
