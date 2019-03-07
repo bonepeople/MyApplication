@@ -30,6 +30,7 @@
         <activity android:name=".LongClickActivity" />
         <activity android:name=".WakeUpActivity" />
         <activity android:name=".ViewPagerActivity" />
+        <activity android:name=".DrawableActivity" />
     </application>
 
 </manifest>
