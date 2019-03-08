@@ -31,6 +31,7 @@
         <activity android:name=".WakeUpActivity" />
         <activity android:name=".ViewPagerActivity" />
         <activity android:name=".DrawableActivity" />
+        <activity android:name=".CustomViewGroupActivity" />
     </application>
 
 </manifest>

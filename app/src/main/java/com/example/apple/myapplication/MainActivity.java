@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.button_wakeup).setOnClickListener(this);
         findViewById(R.id.button_viewpager).setOnClickListener(this);
         findViewById(R.id.button_drawable).setOnClickListener(this);
+        findViewById(R.id.button_viewGroup).setOnClickListener(this);
     }
 
     @Override
@@ -35,6 +36,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button_drawable:
                 startActivity(new Intent(this, DrawableActivity.class));
+                break;
+            case R.id.button_viewGroup:
+                startActivity(new Intent(this, CustomViewGroupActivity.class));
                 break;
         }
     }
