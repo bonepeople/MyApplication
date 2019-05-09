@@ -32,6 +32,7 @@
         <activity android:name=".ViewPagerActivity" />
         <activity android:name=".DrawableActivity" />
         <activity android:name=".CustomViewGroupActivity" />
+        <activity android:name=".ItemDecorationActivity" />
     </application>
 
 </manifest>
