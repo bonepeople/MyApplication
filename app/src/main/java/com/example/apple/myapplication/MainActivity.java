@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.button_viewpager).setOnClickListener(this);
         findViewById(R.id.button_drawable).setOnClickListener(this);
         findViewById(R.id.button_viewGroup).setOnClickListener(this);
+        findViewById(R.id.button_recycler).setOnClickListener(this);
     }
 
     @Override
@@ -39,6 +40,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button_viewGroup:
                 startActivity(new Intent(this, CustomViewGroupActivity.class));
+                break;
+            case R.id.button_recycler:
+                startActivity(new Intent(this, ItemDecorationActivity.class));
                 break;
         }
     }

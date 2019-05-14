@@ -46,4 +46,11 @@
         android:layout_height="wrap_content"
         android:text="自定义容器控件"
         app:layout_constraintTop_toBottomOf="@id/button_drawable" />
+
+    <Button
+        android:id="@+id/button_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RecyclerView测试"
+        app:layout_constraintTop_toBottomOf="@id/button_viewGroup" />
 </android.support.constraint.ConstraintLayout>
