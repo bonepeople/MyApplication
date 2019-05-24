@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.button_viewGroup).setOnClickListener(this);
         findViewById(R.id.button_recycler).setOnClickListener(this);
         findViewById(R.id.button_dialog).setOnClickListener(this);
+        findViewById(R.id.button_record).setOnClickListener(this);
     }
 
     @Override
@@ -47,6 +48,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button_dialog:
                 startActivity(new Intent(this, DialogActivity.class));
+                break;
+            case R.id.button_record:
+                startActivity(new Intent(this, RecordActivity.class));
                 break;
         }
     }

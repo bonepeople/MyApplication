@@ -10,7 +10,8 @@
         android:id="@+id/button_appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CoordinatorLayout + AppBarLayout + CollapsingToolbarLayout" />
+        android:text="CoordinatorLayout + AppBarLayout + CollapsingToolbarLayout"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_click"
@@ -59,5 +60,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="测试Dialog样式"
-        app:layout_constraintTop_toBottomOf="@id/button_viewGroup" />
+        app:layout_constraintTop_toBottomOf="@id/button_recycler" />
+
+    <Button
+        android:id="@+id/button_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试阿里云短视频SDK"
+        app:layout_constraintTop_toBottomOf="@id/button_dialog" />
 </android.support.constraint.ConstraintLayout>

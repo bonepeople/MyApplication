@@ -34,6 +34,7 @@
         <activity android:name=".CustomViewGroupActivity" />
         <activity android:name=".ItemDecorationActivity" />
         <activity android:name=".DialogActivity" />
+        <activity android:name=".RecordActivity" />
     </application>
 
 </manifest>
