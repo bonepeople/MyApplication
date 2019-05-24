@@ -8,4 +8,51 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="FullScreenDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@null</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AnimationDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowAnimationStyle">@style/BottomDialogAnimation</item>
+    </style>
+
+    <style name="BottomDialogAnimation" parent="@style/Animation.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@anim/translate_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/translate_bottom_out</item>
+    </style>
+
+    <!-- 系统默认的对话框样式 -->
+    <style name="DefaultDialogTheme" parent="Theme.AppCompat.Dialog">
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowTitleStyle">@style/RtlOverlay.DialogWindowTitle.AppCompat</item>
+        <item name="android:windowTitleBackgroundStyle">
+            @style/Base.DialogWindowTitleBackground.AppCompat
+        </item>
+        <!-- 窗口背景 -->
+        <item name="android:windowBackground">@drawable/abc_dialog_material_background</item>
+        <!-- 浮于Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- Dialog以外的区域模糊效果 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--是否有覆盖-->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--进出动画-->
+        <item name="android:windowAnimationStyle">@style/Animation.AppCompat.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="windowActionModeOverlay">true</item>
+
+        <item name="listPreferredItemPaddingLeft">24dip</item>
+        <item name="listPreferredItemPaddingRight">24dip</item>
+
+        <item name="android:listDivider">@null</item>
+
+        <item name="android:buttonBarStyle">@style/Widget.AppCompat.ButtonBar.AlertDialog</item>
+        <item name="android:borderlessButtonStyle">@style/Widget.AppCompat.Button.Borderless</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
 </resources>

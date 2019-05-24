@@ -33,6 +33,7 @@
         <activity android:name=".DrawableActivity" />
         <activity android:name=".CustomViewGroupActivity" />
         <activity android:name=".ItemDecorationActivity" />
+        <activity android:name=".DialogActivity" />
     </application>
 
 </manifest>
