@@ -12,7 +12,7 @@ import com.aliyun.vodplayer.media.AliyunLocalSource;
 import com.aliyun.vodplayer.media.AliyunVodPlayer;
 import com.aliyun.vodplayer.media.IAliyunVodPlayer;
 
-public class WakeUpActivity extends AppCompatActivity implements View.OnClickListener, IAliyunVodPlayer.OnPreparedListener, IAliyunVodPlayer.OnFirstFrameStartListener, IAliyunVodPlayer.OnErrorListener, IAliyunVodPlayer.OnCompletionListener, IAliyunVodPlayer.OnStoppedListener {
+public class AliyunPlayerActivity extends AppCompatActivity implements View.OnClickListener, IAliyunVodPlayer.OnPreparedListener, IAliyunVodPlayer.OnFirstFrameStartListener, IAliyunVodPlayer.OnErrorListener, IAliyunVodPlayer.OnCompletionListener, IAliyunVodPlayer.OnStoppedListener {
     private AliyunVodPlayer player;
     private SurfaceView surfaceView;
     private static final String TAG = "aliPlayer";
@@ -20,7 +20,7 @@ public class WakeUpActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wake_up);
+        setContentView(R.layout.activity_aliyun_player);
 
         findViewById(R.id.button_wakeup).setOnClickListener(this);
         findViewById(R.id.button_play).setOnClickListener(this);

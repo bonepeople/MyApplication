@@ -36,7 +36,7 @@
         </activity>
         <activity android:name=".AppBarActivity" />
         <activity android:name=".LongClickActivity" />
-        <activity android:name=".WakeUpActivity" />
+        <activity android:name=".AliyunPlayerActivity" />
         <activity android:name=".ViewPagerActivity" />
         <activity android:name=".DrawableActivity" />
         <activity android:name=".CustomViewGroupActivity" />

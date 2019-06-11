@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, LongClickActivity.class));
                 break;
             case R.id.button_wakeup:
-                startActivity(new Intent(this, WakeUpActivity.class));
+                startActivity(new Intent(this, AliyunPlayerActivity.class));
                 break;
             case R.id.button_viewpager:
                 startActivity(new Intent(this, ViewPagerActivity.class));
