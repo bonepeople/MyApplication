@@ -22,7 +22,7 @@ public class AliyunPlayerActivity extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aliyun_player);
 
-        findViewById(R.id.button_wakeup).setOnClickListener(this);
+        findViewById(R.id.button_prepare).setOnClickListener(this);
         findViewById(R.id.button_play).setOnClickListener(this);
         surfaceView = findViewById(R.id.surfaceView);
 
@@ -78,7 +78,7 @@ public class AliyunPlayerActivity extends AppCompatActivity implements View.OnCl
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.button_wakeup:
+            case R.id.button_prepare:
                 String url = "https://video.mydaydream.com/sv/59723e4a-1691317d171/59723e4a-1691317d171.mp4";
                 AliyunLocalSource.AliyunLocalSourceBuilder builder = new AliyunLocalSource.AliyunLocalSourceBuilder();
                 builder.setSource(url);
