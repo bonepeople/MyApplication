@@ -43,4 +43,7 @@ dependencies {
     implementation 'com.aliyun.video.android:upload:1.5.2'
     //阿里云视频播放器需要阿里云OSS的依赖
     implementation 'com.aliyun.dpa:oss-android-sdk:2.9.2'
+    //rxjava
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+    implementation "io.reactivex.rxjava2:rxjava:2.2.8"
 }
