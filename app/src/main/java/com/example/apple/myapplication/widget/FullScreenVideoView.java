@@ -1,6 +1,8 @@
 package com.example.apple.myapplication.widget;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.os.CountDownTimer;
 import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
@@ -10,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
@@ -45,7 +48,7 @@ public class FullScreenVideoView extends ConstraintLayout implements SurfaceHold
     public static final int STATE_RESTART = 5;
     public static final int STATE_ERROR = 6;
     private static final String TAG = "FullScreenVideoView_tag";
-    private ConstraintLayout constraintLayout_control, constraintLayout_error;
+    private ConstraintLayout constraintLayout_player, constraintLayout_control, constraintLayout_error;
     private ImageView imageView_play;
     private SeekBar seekBar;
     private ProgressBar progressBar;
@@ -58,6 +61,7 @@ public class FullScreenVideoView extends ConstraintLayout implements SurfaceHold
     private CountDownTimer timer_disappear, timer_doubleClick;
     private int seekProgress = -1;
     private boolean prepared = false, playing = false, seeking = false, showingButton = false, finishPlaying = false, firstClick = false;
+    private boolean fullScreen = false;
     private OnStateChangeListener onStateChangeListener;
     private OnProgressChangeListener onProgressChangeListener;
     private OnControlButtonShowListener onControlButtonShowListener;
@@ -81,6 +85,7 @@ public class FullScreenVideoView extends ConstraintLayout implements SurfaceHold
         SurfaceView surfaceView = findViewById(R.id.surfaceView_player);
         surfaceView.getHolder().addCallback(this);
         surfaceView.setOnTouchListener(this);
+        constraintLayout_player = findViewById(R.id.constraintLayout_player);
         constraintLayout_control = findViewById(R.id.constraintLayout_player_control);
         constraintLayout_error = findViewById(R.id.constraintLayout_player_error);
         imageView_play = findViewById(R.id.imageView_player_play);
@@ -160,6 +165,10 @@ public class FullScreenVideoView extends ConstraintLayout implements SurfaceHold
         this.onControlButtonShowListener = onControlButtonShowListener;
     }
 
+    public boolean isFullScreen() {
+        return fullScreen;
+    }
+
     /**
      * 准备播放
      */
@@ -216,6 +225,42 @@ public class FullScreenVideoView extends ConstraintLayout implements SurfaceHold
     }
 
     /**
+     * 进入全屏状态
+     */
+    public void enterFullScreen() {
+        if (fullScreen)
+            return;
+        Context context = getContext();
+        if (context instanceof Activity) {
+            Activity activity = (Activity) context;
+            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+            ViewGroup container = activity.findViewById(android.R.id.content);
+            removeView(constraintLayout_player);
+            LayoutParams params = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            container.addView(constraintLayout_player, params);
+            fullScreen = true;
+        }
+    }
+
+    /**
+     * 退出全屏状态
+     */
+    public void exitFullScreen() {
+        if (!fullScreen)
+            return;
+        Context context = getContext();
+        if (context instanceof Activity) {
+            Activity activity = (Activity) context;
+            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+            ViewGroup container = activity.findViewById(android.R.id.content);
+            container.removeView(constraintLayout_player);
+            LayoutParams params = new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            addView(constraintLayout_player, params);
+            fullScreen = false;
+        }
+    }
+
+    /**
      * 销毁播放器
      * <p>在页面销毁的时候一定要主动销毁播放器</p>
      */
@@ -256,13 +301,6 @@ public class FullScreenVideoView extends ConstraintLayout implements SurfaceHold
         format.setTimeZone(TimeZone.getTimeZone("GMT"));
 
         return format.format(new Date(milliseconds));
-    }
-
-    /**
-     * 切换全屏
-     */
-    private void fullScreen() {
-
     }
 
     @Override
@@ -423,7 +461,7 @@ public class FullScreenVideoView extends ConstraintLayout implements SurfaceHold
             case R.id.imageView_player_fullScreen:
                 timer_disappear.cancel();
                 timer_disappear.start();
-                fullScreen();
+                enterFullScreen();
                 break;
             case R.id.textView_player_refresh:
                 prepare();

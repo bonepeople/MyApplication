@@ -37,6 +37,14 @@ public class AliyunPlayerActivity extends AppCompatActivity implements View.OnCl
     }
 
     @Override
+    public void onBackPressed() {
+        if (fullScreenVideoView.isFullScreen())
+            fullScreenVideoView.exitFullScreen();
+        else
+            super.onBackPressed();
+    }
+
+    @Override
     protected void onDestroy() {
         fullScreenVideoView.destroy();
         super.onDestroy();
