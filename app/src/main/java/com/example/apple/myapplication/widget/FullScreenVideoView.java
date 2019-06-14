@@ -55,9 +55,9 @@ public class FullScreenVideoView extends ConstraintLayout implements SurfaceHold
     private String url;
     private AliyunVodPlayer player;
     private Disposable disposable_time;
-    private CountDownTimer countDownTimer;
+    private CountDownTimer timer_disappear, timer_doubleClick;
     private int seekProgress = -1;
-    private boolean prepared = false, playing = false, seeking = false, showingButton = false, finishPlaying = false;
+    private boolean prepared = false, playing = false, seeking = false, showingButton = false, finishPlaying = false, firstClick = false;
     private OnStateChangeListener onStateChangeListener;
     private OnProgressChangeListener onProgressChangeListener;
     private OnControlButtonShowListener onControlButtonShowListener;
@@ -108,7 +108,7 @@ public class FullScreenVideoView extends ConstraintLayout implements SurfaceHold
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(aLong -> updateProgress());
-        countDownTimer = new CountDownTimer(3000, 1000) {
+        timer_disappear = new CountDownTimer(3000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
 
@@ -117,6 +117,24 @@ public class FullScreenVideoView extends ConstraintLayout implements SurfaceHold
             @Override
             public void onFinish() {
                 showControlButton(false);
+            }
+        };
+        timer_doubleClick = new CountDownTimer(500, 500) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
+                firstClick = false;
+                if (showingButton) {
+                    showControlButton(false);
+                    timer_disappear.cancel();
+                } else {
+                    showControlButton(true);
+                    timer_disappear.start();
+                }
             }
         };
     }
@@ -203,7 +221,8 @@ public class FullScreenVideoView extends ConstraintLayout implements SurfaceHold
      */
     public void destroy() {
         disposable_time.dispose();
-        countDownTimer.cancel();
+        timer_disappear.cancel();
+        timer_doubleClick.cancel();
         player.stop();
         player.release();
     }
@@ -274,13 +293,13 @@ public class FullScreenVideoView extends ConstraintLayout implements SurfaceHold
     public void onStartTrackingTouch(SeekBar seekBar) {
         seekProgress = -1;
         seeking = true;
-        countDownTimer.cancel();
+        timer_disappear.cancel();
         pause();
     }
 
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
-        countDownTimer.start();
+        timer_disappear.start();
         if (seekProgress != -1) {
             player.seekTo((int) (seekProgress * player.getDuration() / 100));
             progressBar.setVisibility(VISIBLE);
@@ -296,8 +315,8 @@ public class FullScreenVideoView extends ConstraintLayout implements SurfaceHold
     public void onFirstFrameStart() {
         prepared = true;
         pause();
-        countDownTimer.cancel();
-        countDownTimer.start();
+        timer_disappear.cancel();
+        timer_disappear.start();
         showControlButton(true);
         updateTime(0, player.getDuration());
         if (finishPlaying) {
@@ -371,12 +390,18 @@ public class FullScreenVideoView extends ConstraintLayout implements SurfaceHold
                 break;
             }
             case MotionEvent.ACTION_UP: {
-                if (showingButton) {
-                    showControlButton(false);
-                    countDownTimer.cancel();
+                if (!firstClick) {
+                    firstClick = true;
+                    timer_doubleClick.start();
                 } else {
-                    showControlButton(true);
-                    countDownTimer.start();
+                    firstClick = false;
+                    timer_doubleClick.cancel();
+                    timer_disappear.cancel();
+                    timer_disappear.start();
+                    if (playing)
+                        pause();
+                    else
+                        resume();
                 }
                 break;
             }
@@ -388,16 +413,16 @@ public class FullScreenVideoView extends ConstraintLayout implements SurfaceHold
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.imageView_player_play:
-                countDownTimer.cancel();
-                countDownTimer.start();
+                timer_disappear.cancel();
+                timer_disappear.start();
                 if (playing)
                     pause();
                 else
                     resume();
                 break;
             case R.id.imageView_player_fullScreen:
-                countDownTimer.cancel();
-                countDownTimer.start();
+                timer_disappear.cancel();
+                timer_disappear.start();
                 fullScreen();
                 break;
             case R.id.textView_player_refresh:
