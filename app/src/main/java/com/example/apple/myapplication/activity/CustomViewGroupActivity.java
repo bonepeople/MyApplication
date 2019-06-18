@@ -1,7 +1,9 @@
-package com.example.apple.myapplication;
+package com.example.apple.myapplication.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.apple.myapplication.R;
 
 public class CustomViewGroupActivity extends AppCompatActivity {
 

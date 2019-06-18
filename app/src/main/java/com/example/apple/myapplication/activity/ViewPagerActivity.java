@@ -1,4 +1,4 @@
-package com.example.apple.myapplication;
+package com.example.apple.myapplication.activity;
 
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
@@ -12,6 +12,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.apple.myapplication.R;
 
 import java.util.ArrayList;
 

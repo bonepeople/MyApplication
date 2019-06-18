@@ -1,4 +1,4 @@
-package com.example.apple.myapplication;
+package com.example.apple.myapplication.activity;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,6 +9,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+
+import com.example.apple.myapplication.R;
 
 /**
  * 测试各种各样的对话框

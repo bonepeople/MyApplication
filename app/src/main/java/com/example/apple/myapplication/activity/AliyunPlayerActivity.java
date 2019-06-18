@@ -1,10 +1,11 @@
-package com.example.apple.myapplication;
+package com.example.apple.myapplication.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.apple.myapplication.R;
 import com.example.apple.myapplication.widget.FullScreenVideoView;
 
 public class AliyunPlayerActivity extends AppCompatActivity implements View.OnClickListener, FullScreenVideoView.OnStateChangeListener, FullScreenVideoView.OnProgressChangeListener, FullScreenVideoView.OnControlButtonShowListener {

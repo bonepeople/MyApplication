@@ -1,4 +1,4 @@
-package com.example.apple.myapplication;
+package com.example.apple.myapplication.activity;
 
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.ConstraintSet;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+
+import com.example.apple.myapplication.R;
 
 public class LongClickActivity extends AppCompatActivity implements View.OnClickListener, View.OnLongClickListener {
     private CheckBox checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6;

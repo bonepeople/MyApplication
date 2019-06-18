@@ -1,10 +1,12 @@
-package com.example.apple.myapplication;
+package com.example.apple.myapplication.activity;
 
 import android.animation.ArgbEvaluator;
 import android.support.design.widget.AppBarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.LinearLayout;
+
+import com.example.apple.myapplication.R;
 
 public class AppBarActivity extends AppCompatActivity {
     private int startColor = 0xFF008D96, endColor = 0xFFFFFFFF;

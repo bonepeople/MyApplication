@@ -1,4 +1,4 @@
-package com.example.apple.myapplication;
+package com.example.apple.myapplication.activity;
 
 import android.graphics.Canvas;
 import android.graphics.Outline;
@@ -12,6 +12,8 @@ import android.graphics.drawable.shapes.RoundRectShape;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.example.apple.myapplication.R;
 
 public class DrawableActivity extends AppCompatActivity {
     private static final int tintColor = 0xFF669966;

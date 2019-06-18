@@ -1,9 +1,11 @@
-package com.example.apple.myapplication;
+package com.example.apple.myapplication.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import com.example.apple.myapplication.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

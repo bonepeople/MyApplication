@@ -1,4 +1,4 @@
-package com.example.apple.myapplication;
+package com.example.apple.myapplication.activity;
 
 import android.Manifest;
 import android.app.Activity;
@@ -25,6 +25,7 @@ import com.aliyun.svideo.sdk.external.struct.recorder.CameraParam;
 import com.aliyun.svideo.sdk.external.struct.recorder.CameraType;
 import com.aliyun.svideo.sdk.external.struct.recorder.FlashType;
 import com.aliyun.svideo.sdk.external.struct.recorder.MediaInfo;
+import com.example.apple.myapplication.R;
 import com.example.apple.myapplication.utils.OrientationDetector;
 
 import java.io.File;

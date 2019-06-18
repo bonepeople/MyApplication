@@ -19,7 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,18 +34,18 @@
                 <data android:scheme="bone" />
             </intent-filter>
         </activity>
-        <activity android:name=".AppBarActivity" />
-        <activity android:name=".LongClickActivity" />
+        <activity android:name=".activity.AppBarActivity" />
+        <activity android:name=".activity.LongClickActivity" />
         <activity
-            android:name=".AliyunPlayerActivity"
+            android:name=".activity.AliyunPlayerActivity"
             android:configChanges="orientation|screenSize"
             android:screenOrientation="portrait" />
-        <activity android:name=".ViewPagerActivity" />
-        <activity android:name=".DrawableActivity" />
-        <activity android:name=".CustomViewGroupActivity" />
-        <activity android:name=".ItemDecorationActivity" />
-        <activity android:name=".DialogActivity" />
-        <activity android:name=".RecordActivity" />
+        <activity android:name=".activity.ViewPagerActivity" />
+        <activity android:name=".activity.DrawableActivity" />
+        <activity android:name=".activity.CustomViewGroupActivity" />
+        <activity android:name=".activity.ItemDecorationActivity" />
+        <activity android:name=".activity.DialogActivity" />
+        <activity android:name=".activity.RecordActivity" />
     </application>
 
 </manifest>

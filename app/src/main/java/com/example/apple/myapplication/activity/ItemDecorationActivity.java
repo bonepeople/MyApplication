@@ -1,10 +1,11 @@
-package com.example.apple.myapplication;
+package com.example.apple.myapplication.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.example.apple.myapplication.R;
 import com.example.apple.myapplication.adapter.RecyclerViewAdapter;
 import com.example.apple.myapplication.widget.LinearItemDecoration;
 
