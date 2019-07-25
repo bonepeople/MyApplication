@@ -75,4 +75,11 @@
         android:layout_height="wrap_content"
         android:text="自动更新测试"
         app:layout_constraintTop_toBottomOf="@id/button_record" />
+
+    <Button
+        android:id="@+id/button_lottie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lottie动画库"
+        app:layout_constraintTop_toBottomOf="@id/button_update" />
 </android.support.constraint.ConstraintLayout>
