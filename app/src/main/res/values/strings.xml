@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="font_test">字重测试 simple 123456  bold</string>
 </resources>

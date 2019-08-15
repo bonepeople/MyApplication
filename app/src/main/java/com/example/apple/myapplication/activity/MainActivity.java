@@ -14,11 +14,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViewById(R.id.button_appbar).setOnClickListener(this);
-        findViewById(R.id.button_click).setOnClickListener(this);
-        findViewById(R.id.button_wakeup).setOnClickListener(this);
+        findViewById(R.id.button_long_click).setOnClickListener(this);
+        findViewById(R.id.button_ali_player).setOnClickListener(this);
         findViewById(R.id.button_viewpager).setOnClickListener(this);
         findViewById(R.id.button_drawable).setOnClickListener(this);
-        findViewById(R.id.button_viewGroup).setOnClickListener(this);
+        findViewById(R.id.button_font).setOnClickListener(this);
         findViewById(R.id.button_recycler).setOnClickListener(this);
         findViewById(R.id.button_dialog).setOnClickListener(this);
         findViewById(R.id.button_record).setOnClickListener(this);
@@ -32,10 +32,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button_appbar:
                 startActivity(new Intent(this, AppBarActivity.class));
                 break;
-            case R.id.button_click:
+            case R.id.button_long_click:
                 startActivity(new Intent(this, LongClickActivity.class));
                 break;
-            case R.id.button_wakeup:
+            case R.id.button_ali_player:
                 startActivity(new Intent(this, AliyunPlayerActivity.class));
                 break;
             case R.id.button_viewpager:
@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button_drawable:
                 startActivity(new Intent(this, DrawableActivity.class));
                 break;
-            case R.id.button_viewGroup:
-                startActivity(new Intent(this, CustomViewGroupActivity.class));
+            case R.id.button_font:
+                startActivity(new Intent(this, FontActivity.class));
                 break;
             case R.id.button_recycler:
                 startActivity(new Intent(this, ItemDecorationActivity.class));

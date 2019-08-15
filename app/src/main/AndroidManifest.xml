@@ -52,7 +52,7 @@
             android:screenOrientation="portrait" />
         <activity android:name=".activity.ViewPagerActivity" />
         <activity android:name=".activity.DrawableActivity" />
-        <activity android:name=".activity.CustomViewGroupActivity" />
+        <activity android:name=".activity.FontActivity" />
         <activity android:name=".activity.ItemDecorationActivity" />
         <activity android:name=".activity.DialogActivity" />
         <activity android:name=".activity.RecordActivity" />

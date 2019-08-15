@@ -5,11 +5,16 @@ import android.os.Bundle;
 
 import com.example.apple.myapplication.R;
 
-public class CustomViewGroupActivity extends AppCompatActivity {
+/**
+ * 测试字体字重的界面
+ *
+ * @author bonepeople
+ */
+public class FontActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_custom_view_group);
+        setContentView(R.layout.activity_font);
     }
 }

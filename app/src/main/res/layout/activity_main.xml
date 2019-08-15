@@ -14,25 +14,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button_click"
+        android:id="@+id/button_long_click"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="测试长按时间时更新界面导致的卡顿现象"
         app:layout_constraintTop_toBottomOf="@id/button_appbar" />
 
     <Button
-        android:id="@+id/button_wakeup"
+        android:id="@+id/button_ali_player"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="阿里云播放器测试"
-        app:layout_constraintTop_toBottomOf="@id/button_click" />
+        app:layout_constraintTop_toBottomOf="@id/button_long_click" />
 
     <Button
         android:id="@+id/button_viewpager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="测试ViewPager逻辑"
-        app:layout_constraintTop_toBottomOf="@id/button_wakeup" />
+        app:layout_constraintTop_toBottomOf="@id/button_ali_player" />
 
     <Button
         android:id="@+id/button_drawable"
@@ -42,10 +42,10 @@
         app:layout_constraintTop_toBottomOf="@id/button_viewpager" />
 
     <Button
-        android:id="@+id/button_viewGroup"
+        android:id="@+id/button_font"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="自定义容器控件"
+        android:text="字体字重示例"
         app:layout_constraintTop_toBottomOf="@id/button_drawable" />
 
     <Button
@@ -53,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="RecyclerView测试"
-        app:layout_constraintTop_toBottomOf="@id/button_viewGroup" />
+        app:layout_constraintTop_toBottomOf="@id/button_font" />
 
     <Button
         android:id="@+id/button_dialog"
