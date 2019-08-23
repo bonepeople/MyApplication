@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.transition.LayoutTransitionActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout_root"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:animateLayoutChanges="true"
+        android:background="#669966"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView_transition_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#AA9999"
+            android:text="textView_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_transition_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#BB8888"
+            android:text="textView_2"
+            app:layout_constraintStart_toEndOf="@id/textView_transition_1"
+            app:layout_constraintTop_toTopOf="@id/textView_transition_1" />
+
+        <TextView
+            android:id="@+id/textView_transition_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#BB6666"
+            android:text="textView_3"
+            app:layout_constraintStart_toEndOf="@id/textView_transition_2"
+            app:layout_constraintTop_toTopOf="@id/textView_transition_1" />
+
+        <ImageView
+            android:id="@+id/imageView_transition_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_transition_1" />
+
+        <ImageView
+            android:id="@+id/imageView_transition_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView_transition_1" />
+    </android.support.constraint.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#EEEEEE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="hideTextView1"
+                android:text="隐藏textView_1" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="showTextView1"
+                android:text="显示textView_1" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="changeLayoutTransition"
+                android:text="切换至自定义动画" />
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
