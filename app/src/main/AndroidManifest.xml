@@ -60,6 +60,7 @@
         <activity android:name=".activity.LottieActivity" />
         <activity android:name=".activity.TransitionManagerActivity" />
         <activity android:name=".activity.transition.LayoutTransitionActivity" />
+        <activity android:name=".activity.transition.SceneTransitionActivity" />
     </application>
 
 </manifest>

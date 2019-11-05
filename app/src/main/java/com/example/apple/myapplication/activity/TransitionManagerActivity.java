@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.example.apple.myapplication.R;
 import com.example.apple.myapplication.activity.transition.LayoutTransitionActivity;
+import com.example.apple.myapplication.activity.transition.SceneTransitionActivity;
 
 /**
  * 动画测试主界面
@@ -21,5 +22,9 @@ public class TransitionManagerActivity extends AppCompatActivity {
 
     public void layout(View view) {
         startActivity(new Intent(this, LayoutTransitionActivity.class));
+    }
+
+    public void scene(View view) {
+        startActivity(new Intent(this, SceneTransitionActivity.class));
     }
 }
