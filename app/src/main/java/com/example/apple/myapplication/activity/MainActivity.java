@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.button_viewpager).setOnClickListener(this);
         findViewById(R.id.button_drawable).setOnClickListener(this);
         findViewById(R.id.button_font).setOnClickListener(this);
-        findViewById(R.id.button_recycler).setOnClickListener(this);
+        findViewById(R.id.button_bottomNavigation).setOnClickListener(this);
         findViewById(R.id.button_dialog).setOnClickListener(this);
         findViewById(R.id.button_record).setOnClickListener(this);
         findViewById(R.id.button_update).setOnClickListener(this);
@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button_font:
                 startActivity(new Intent(this, FontActivity.class));
                 break;
-            case R.id.button_recycler:
-                startActivity(new Intent(this, ItemDecorationActivity.class));
+            case R.id.button_bottomNavigation:
+                startActivity(new Intent(this, BottomNavigationActivity.class));
                 break;
             case R.id.button_dialog:
                 startActivity(new Intent(this, DialogActivity.class));

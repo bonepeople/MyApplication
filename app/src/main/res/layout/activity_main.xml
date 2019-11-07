@@ -51,10 +51,10 @@
                 android:text="字体字重示例" />
 
             <Button
-                android:id="@+id/button_recycler"
+                android:id="@+id/button_bottomNavigation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="RecyclerView测试" />
+                android:text="底部导航条样式展示" />
 
             <Button
                 android:id="@+id/button_dialog"
