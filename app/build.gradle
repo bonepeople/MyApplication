@@ -42,7 +42,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     //阿里云短视频SDK所需依赖
-    implementation 'pub.devrel:easypermissions:1.2.0'
+    implementation 'pub.devrel:easypermissions:2.0.1'
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.squareup.okhttp3:okhttp:3.14.1'
     implementation 'com.alivc.conan:AlivcConan:0.9.3'
@@ -54,4 +54,6 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:2.2.8"
     //lottie动画库
     implementation 'com.airbnb.android:lottie:2.7.0'
+    //bottom-navigation-bar
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.1.0'
 }
