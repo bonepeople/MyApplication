@@ -85,6 +85,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="转场动画测试" />
+
+            <Button
+                android:id="@+id/button_network"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="网络状态监听" />
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>
