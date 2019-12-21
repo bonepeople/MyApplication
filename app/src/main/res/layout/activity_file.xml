@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.FileActivity">
+
+    <Button
+        android:id="@+id/button_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择文件"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_folder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="选择文件夹"
+        app:layout_constraintTop_toBottomOf="@id/button_file" />
+
+    <TextView
+        android:id="@+id/textView_path"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#09000000"
+        app:layout_constraintTop_toBottomOf="@id/button_folder" />
+
+</android.support.constraint.ConstraintLayout>

@@ -19,6 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup">
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${package_name}"
@@ -62,6 +63,7 @@
         <activity android:name=".activity.transition.LayoutTransitionActivity" />
         <activity android:name=".activity.transition.SceneTransitionActivity" />
         <activity android:name=".activity.NetworkActivity" />
+        <activity android:name=".activity.FileActivity" />
     </application>
 
 </manifest>
